@@ -3,7 +3,7 @@ import requests//USL擷取套件
 res-resquest.get("")//網站內容(內政部交通事故統計)
 print res.txt
 
-data=[]//資料放入(A1類 道路交通事故-機車)
+data=[]//資料放入陣列做統計(A1類 道路交通事故-機車)
 count_frq=dict()
 for one in data:
   if one in count_frq:
