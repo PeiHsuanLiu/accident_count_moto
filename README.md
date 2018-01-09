@@ -28,7 +28,26 @@ for one in data:
       count_frq[one]=1
 print count_frq
 
-//計數(未)
+//計數(未)，計算特定目錄底下的檔案以及目錄數量
+import os
+import sys
+
+fileList = []
+fileSize = 0
+folderCount = 0
+rootdir = '/usr/lib'
+
+for root, subFolders, files in os.walk(rootdir):
+    folderCount += len(subFolders)
+    for file in files:
+        f = os.path.join(root,file)
+        fileSize = fileSize + os.path.getsize(f)
+        #print(f)
+        fileList.append(f)
+
+print("Total Size is {0} bytes".format(fileSize))
+print(“Total Files “, len(fileList))
+print(“Total Folders “, folderCount)
 
 from collections import OrderedDict
 //OrderedDict先進先出，當容量超出限制，刪除最前面的資料
@@ -48,10 +67,30 @@ class LastUpdatedOrderedDict(OrderedDict):
           print 'add:',(key,value)
       OrderedDict.__setitem__(self, key, value)
 
-
-
 //google Maps APIs
 
-
+//修改地圖模式，縮放比(未)
+//加入圖示跟標記
+var image ='images/beachfloag.png';
+var myLatLag=new google.maps.LatLag(-33.890542, 151.274856);
+var beachMarker=new google.maps.Marker({
+    position:myLatLng,
+    map:map,
+    icon: image
+});
+//路，區塊(設定包含多個座標點的物件)
+var flightplanCorrdinates=[
+    new google.maps.LatLng(37.772323, -122.214897),
+    new google.maps.LatLng(, ),
+    new google.maps.LatLng(, ),
+    new google.maps.LatLng(, ),
+];
+var flightPath = new google.maps.PolyLine({
+    path:flightPathColorDinates,
+    strokeColor:"#FF0000",//筆色為紅色
+    strokeOpacity:1.0,//不透明度為1.0
+    strokeWeught:2//筆粗2點
+    });
+    
 
 
