@@ -92,5 +92,5 @@ var flightPath = new google.maps.PolyLine({
     strokeWeught:2//筆粗2點
     });
     
-
+ //拷貝入HTML
 
